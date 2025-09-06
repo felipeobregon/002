@@ -137,32 +137,7 @@ revealElements.forEach(el => {
     revealObserver.observe(el);
 });
 
-// Add typing effect to hero title
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Initialize typing effect when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText.replace(/<[^>]*>/g, ''), 50);
-        }, 1000);
-    }
-});
+// Hero title is now displayed normally without typewriter effect
 
 // Add parallax effect for hero section
 window.addEventListener('scroll', () => {
